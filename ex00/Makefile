@@ -10,7 +10,7 @@ SHELL	:= bash
 #                                     NAMES                                    #
 #==============================================================================#
 
-NAME			= ScalarConverter 
+NAME			= convert 
 
 ###	Message Vars
 _NAME			= [$(MAG)cpp$(D)]
