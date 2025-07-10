@@ -10,7 +10,7 @@ SHELL	:= bash
 #                                     NAMES                                    #
 #==============================================================================#
 
-NAME			= 
+NAME			= ScalarConverter 
 
 ###	Message Vars
 _NAME			= [$(MAG)cpp$(D)]
@@ -28,6 +28,7 @@ TEMP_PATH		= .temp
 
 ### Files Source
 FILES = main.cpp
+FILES += ScalarConverter.cpp
 
 ### Paths
 SRC		= $(addprefix $(SRC_PATH)/, $(FILES))
