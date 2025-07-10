@@ -6,7 +6,7 @@
 /*   By: lude-bri <lude-bri@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 18:19:19 by lude-bri          #+#    #+#             */
-/*   Updated: 2025/07/10 19:14:45 by lude-bri         ###   ########.fr       */
+/*   Updated: 2025/07/10 19:22:12 by lude-bri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,12 @@ void	ScalarConverter::convert(const std::string literal) {
 	//converts from string to it's actual type
 	//then convert it EXPLICITLY to the three other data types
 	
+	//1. preciso verificar se um char es um char
+	//2. preciso verificar se um char es um int
+	//3. preciso verificar se um char es um float
+	//4. preciso verificar se um char es um double
+	//
+	//
+	//vou fazer um pointer to member function para descobrir, uma vez que ja sei
+	//vou converter atraves de um switch case
 }
