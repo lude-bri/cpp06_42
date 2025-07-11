@@ -63,9 +63,11 @@ bool Converter::isInt(const std::string &limits) const {
 bool Converter::isFloat(const std::string &limits) const { 
 	DEBUG_MSG("A isFloat Method was called");
 
-	if (limits == "nanf" || limits == "+inff" || limits == "-inff") return true;
+	if (limits == "nanf" || limits == "+inff" || limits == "-inff")
+		return true;
 	
-	if (limits.empty() || limits[limits.size() - 1] != 'f') return false;
+	if (limits.empty() || limits[limits.size() - 1] != 'f') 
+		return false;
 	
 	std::string sub = limits.substr(0, limits.size() -1);
 
