@@ -28,6 +28,7 @@ TEMP_PATH		= .temp
 
 ### Files Source
 FILES = main.cpp
+FILES += Converter.cpp
 FILES += ScalarConverter.cpp
 
 ### Paths

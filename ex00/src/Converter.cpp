@@ -34,7 +34,37 @@ Converter::~Converter() {
 }
 
 //Pointer to Member Function
+const Converter::MemFun Converter::functions[4] = {
+	&Converter::isChar,
+	&Converter::isInt,
+	&Converter::isFloat,
+	&Converter::isDouble
+};
+
 //Verify CHAR Method
+bool Converter::isChar(const std::string &limits) const {
+	DEBUG_MSG("A isChar Method was called");
+	return false;
+}
+
 //Verify INT Method
+bool Converter::isInt(const std::string &limits) const { 
+	DEBUG_MSG("A isInt Method was called");
+
+	return false;
+}
+
 //Verify FLOAT Method
+bool Converter::isFloat(const std::string &limits) const { 
+	DEBUG_MSG("A isFloat Method was called");
+
+	return false; 
+}
+
 //Verify DOUBLE Method
+bool Converter::isDouble(const std::string &limits) const { 
+	DEBUG_MSG("A isDouble Method was called");
+
+	return false;
+}
+

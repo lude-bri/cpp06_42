@@ -13,6 +13,7 @@
 #pragma once
 
 // #include "ScalarConverter.hpp"
+
 #include <iostream>
 
 #ifdef DEBUG
@@ -30,12 +31,14 @@ public:
 	Converter &operator=(const Converter &rhs);
 	~Converter();
 
-	typedef bool (Converter::*MemFun)(const std::string &name) const;
-
-	static const MemFun functions[3];
-
-	bool	isChar(const std::string &limits);
-	bool	isInt(const std::string &limits);
-	bool	isFloat(const std::string &limits);
-	bool	isDouble(const std::string &limits);
+	typedef bool (Converter::*MemFun)(const std::string &limits) const;
+    
+    static const MemFun functions[4];
+    
+    bool isChar(const std::string &limits) const;
+    bool isInt(const std::string &limits) const;
+    bool isFloat(const std::string &limits) const;
+    bool isDouble(const std::string &limits) const;
 };
+
+

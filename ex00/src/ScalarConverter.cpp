@@ -36,10 +36,13 @@ ScalarConverter::~ScalarConverter() {
 void	ScalarConverter::convert(const std::string literal) {
 	std::cout << literal << std::endl;
 
+	Converter check;
 	//first detect the type of the literal passed as a parameter
 	//converts from string to it's actual type
 	//then convert it EXPLICITLY to the three other data types
 	
+	if (check.isInt(literal) == false)
+		std::cout << literal << " is false " << std::endl;
 	//1. preciso verificar se um char es um char
 	//2. preciso verificar se um char es um int
 	//3. preciso verificar se um char es um float
