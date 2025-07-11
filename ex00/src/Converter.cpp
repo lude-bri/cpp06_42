@@ -44,21 +44,35 @@ const Converter::MemFun Converter::functions[4] = {
 //Verify CHAR Method
 bool Converter::isChar(const std::string &limits) const {
 	DEBUG_MSG("A isChar Method was called");
-	return false;
+
+	return limits.length() == 1 && !std::isdigit(limits[0]);
 }
 
 //Verify INT Method
 bool Converter::isInt(const std::string &limits) const { 
 	DEBUG_MSG("A isInt Method was called");
 
-	return false;
+	char *end;
+
+	errno = 0;
+	long val = std::strtol(limits.c_str(), &end, 10);
+	return errno == 0 && *end == '\0' && val >= INT_MIN && val <= INT_MAX;
 }
 
 //Verify FLOAT Method
 bool Converter::isFloat(const std::string &limits) const { 
 	DEBUG_MSG("A isFloat Method was called");
 
-	return false; 
+	if (limits == "nanf" || limits == "+inff" || limits == "-inff") return true;
+	
+	if (limits.empty() || limits[limits.size() - 1] != 'f') return false;
+	
+	std::string sub = limits.substr(0, limits.size() -1);
+
+	char *end;
+	errno = 0;
+	std::strtod(sub.c_str(), &end);
+	return errno == 0 && *end == '\0'; 
 }
 
 //Verify DOUBLE Method
