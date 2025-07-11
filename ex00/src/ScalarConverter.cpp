@@ -6,7 +6,7 @@
 /*   By: lude-bri <lude-bri@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 18:19:19 by lude-bri          #+#    #+#             */
-/*   Updated: 2025/07/10 19:22:12 by lude-bri         ###   ########.fr       */
+/*   Updated: 2025/07/11 21:13:40 by lude-bri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,11 +61,9 @@ void	ScalarConverter::convert(const std::string literal) {
 	switch (result) {
 		case 0:
 			c.convertChar(literal);
-			std::cout << literal << " is a character" << std::endl;
 			break;
 		case 1:
 			c.convertInt(literal);
-			std::cout << literal << " is an integer" << std::endl;
 			break;
 		case 2:
 			c.convertFloat(literal);
