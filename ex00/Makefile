@@ -1,4 +1,3 @@
-
 #==============================================================================#
 #                                  MAKE CONFIG                                 #
 #==============================================================================#
@@ -10,7 +9,7 @@ SHELL	:= bash
 #                                     NAMES                                    #
 #==============================================================================#
 
-NAME			= convert 
+NAME			= convert
 
 ###	Message Vars
 _NAME			= [$(MAG)cpp$(D)]
@@ -131,13 +130,6 @@ fclean: clean			## Remove executable and .gdbinit
 		echo " $(RED)$(D) [$(GRN)Nothing to be fcleaned!$(D)]"; \
 	fi
 
-	@found_files=$$(find . -maxdepth 1 -type f -name "*_shrubbery"); \
-	if [ -n "$$found_files" ]; then \
-		$(RM) $$found_files; \
-		echo "* $(YEL)Removing shrubbery files$(D): $(_SUCCESS)"; \
-	else \
-		echo " $(RED)$(D) [$(GRN)No shrubbery files found$(D)]"; \
-	fi
 
 re: fclean all	## Purge & Recompile
 
