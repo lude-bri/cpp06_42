@@ -12,7 +12,8 @@
 
 #pragma once
 
-#include "ScalarConverter.hpp"
+// #include "ScalarConverter.hpp"
+#include <iostream>
 
 #ifdef DEBUG
 # define DEBUG_MSG(x) std::cout << "[DEBUG] : " << x << std::endl;

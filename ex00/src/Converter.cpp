@@ -13,9 +13,25 @@
 #include "../inc/Converter.hpp"
 
 //Default Constructor
+Converter::Converter() {
+	DEBUG_MSG("A Default Converter Constructor was called");
+}
+
 //Copy Constructor
+Converter::Converter(const Converter &rhs) {
+	DEBUG_MSG("A Copy Converter Constructor was called");
+}
+
 //Operator Assignment
+Converter &Converter::operator=(const Converter &rhs) {
+	DEBUG_MSG("An Operator Assignment for Converter was called");
+	return *this;
+}
+
 //Destructor
+Converter::~Converter() {
+	DEBUG_MSG("A Default Converter Destructor was called");
+}
 
 //Pointer to Member Function
 //Verify CHAR Method
