@@ -81,7 +81,7 @@ bool Converter::isFloat(const std::string &limits) const {
 bool Converter::isDouble(const std::string &limits) const { 
 	DEBUG_MSG("A isDouble Method was called");
 
-	if (limits == "nanf" || limits == "+inff" || limits == "-inff")
+	if (limits == "nan" || limits == "+inf" || limits == "-inf")
 		return true;
 	
 

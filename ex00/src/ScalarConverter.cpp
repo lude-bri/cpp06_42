@@ -56,18 +56,23 @@ void	ScalarConverter::convert(const std::string literal) {
 	DEBUG_MSG("A convert method was called");
 
 	int	result = verifyType(literal);
+	Converter c;
 
 	switch (result) {
 		case 0:
+			c.convertChar(literal);
 			std::cout << literal << " is a character" << std::endl;
 			break;
 		case 1:
+			c.convertInt(literal);
 			std::cout << literal << " is an integer" << std::endl;
 			break;
 		case 2:
+			c.convertFloat(literal);
 			std::cout << literal << " is a float" << std::endl;
 			break;
 		case 3:
+			c.convertDouble(literal);
 			std::cout << literal << " is a double" << std::endl;
 			break;
 		default:

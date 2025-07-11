@@ -29,6 +29,7 @@ TEMP_PATH		= .temp
 FILES = main.cpp
 FILES += Converter.cpp
 FILES += ScalarConverter.cpp
+FILES += conversion.cpp
 
 ### Paths
 SRC		= $(addprefix $(SRC_PATH)/, $(FILES))

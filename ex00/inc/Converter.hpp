@@ -34,11 +34,18 @@ public:
 	typedef bool (Converter::*MemFun)(const std::string &limits) const;
     
     static const MemFun functions[4];
-    
+   
+	//Verify Functions
     bool isChar(const std::string &limits) const;
     bool isInt(const std::string &limits) const;
     bool isFloat(const std::string &limits) const;
     bool isDouble(const std::string &limits) const;
+	
+	//Convert Functions
+	void	convertChar(const std::string &limits) const;
+	void	convertInt(const std::string &limits) const;
+	void	convertFloat(const std::string &limits) const;
+	void	convertDouble(const std::string &limits) const;
 };
 
 
