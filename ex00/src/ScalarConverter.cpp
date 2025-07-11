@@ -33,31 +33,46 @@ ScalarConverter::~ScalarConverter() {
 	DEBUG_MSG("A ScalarConverter Destructor was called");
 }
 
-void	ScalarConverter::convert(const std::string literal) {
+static int	verifyType(const std::string &literal) {
+
 	DEBUG_MSG("A convert method was called");
 
 	Converter check;
-	//first detect the type of the literal passed as a parameter
-	//converts from string to it's actual type
-	//then convert it EXPLICITLY to the three other data types
-	
-	if (check.isChar(literal) == true )
-		std::cout << literal << " is a character " << std::endl;
-	else if (check.isInt(literal) == true)
-		std::cout << literal << " is an integer " << std::endl;
-	else if (check.isFloat(literal) == true)
-		std::cout << literal << " is a float " << std::endl;
-	else if (check.isDouble(literal) == true)
-		std::cout << literal << " is a double " << std::endl;
-	else
-		std::cout << literal << " is not valid " << std::endl;
 
-	//1. preciso verificar se um char es um char
-	//2. preciso verificar se um char es um int
-	//3. preciso verificar se um char es um float
-	//4. preciso verificar se um char es um double
-	//
-	//
-	//vou fazer um pointer to member function para descobrir, uma vez que ja sei
-	//vou converter atraves de um switch case
+	if (check.isChar(literal) == true )
+		return 0;
+	else if (check.isInt(literal) == true)
+		return 1;
+	else if (check.isFloat(literal) == true)
+		return 2;
+	else if (check.isDouble(literal) == true)
+		return 3;
+	else
+		return -1;
+
 }
+
+void	ScalarConverter::convert(const std::string literal) {
+	DEBUG_MSG("A convert method was called");
+
+	int	result = verifyType(literal);
+
+	switch (result) {
+		case 0:
+			std::cout << literal << " is a character" << std::endl;
+			break;
+		case 1:
+			std::cout << literal << " is an integer" << std::endl;
+			break;
+		case 2:
+			std::cout << literal << " is a float" << std::endl;
+			break;
+		case 3:
+			std::cout << literal << " is a double" << std::endl;
+			break;
+		default:
+			std::cout << literal << " is not valid" << std::endl;
+			break;
+	}
+}
+
