@@ -15,8 +15,6 @@
 #include <iostream>
 #include "Converter.hpp"
 
-
-
 class ScalarConverter : public Converter {
 
 private:

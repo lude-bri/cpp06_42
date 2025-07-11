@@ -12,4 +12,13 @@
 
 #include "../inc/Converter.hpp"
 
+//Default Constructor
+//Copy Constructor
+//Operator Assignment
+//Destructor
 
+//Pointer to Member Function
+//Verify CHAR Method
+//Verify INT Method
+//Verify FLOAT Method
+//Verify DOUBLE Method
