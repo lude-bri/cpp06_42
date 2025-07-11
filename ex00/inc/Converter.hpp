@@ -14,6 +14,12 @@
 
 #include "ScalarConverter.hpp"
 
+#ifdef DEBUG
+# define DEBUG_MSG(x) std::cout << "[DEBUG] : " << x << std::endl;
+#else
+# define DEBUG_MSG(x)
+#endif
+
 class Converter {
 
 public:

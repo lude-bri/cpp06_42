@@ -15,11 +15,7 @@
 #include <iostream>
 #include "Converter.hpp"
 
-#ifdef DEBUG
-# define DEBUG_MSG(x) std::cout << "[DEBUG] : " << x << std::endl;
-#else
-# define DEBUG_MSG(x)
-#endif
+
 
 class ScalarConverter : public Converter {
 
