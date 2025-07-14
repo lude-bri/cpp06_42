@@ -33,7 +33,6 @@ ScalarConverter::~ScalarConverter() {
 	DEBUG_MSG("A ScalarConverter Destructor was called");
 }
 
-
 static int	verifyType(const std::string &literal) {
 
 	DEBUG_MSG("A convert method was called");
@@ -74,6 +73,7 @@ void	ScalarConverter::convert(const std::string literal) {
 			break;
 		default:
 			std::cout << literal << " is not valid" << std::endl;
+			std::cout << "Try a valid target (char, int, float or double), or type help" << std::endl;
 			break;
 	}
 }
