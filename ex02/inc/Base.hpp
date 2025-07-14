@@ -6,13 +6,19 @@
 /*   By: lude-bri <lude-bri@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 22:30:02 by lude-bri          #+#    #+#             */
-/*   Updated: 2025/07/14 22:35:42 by lude-bri         ###   ########.fr       */
+/*   Updated: 2025/07/14 22:42:21 by lude-bri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <iostream>
+
+# define RED     "\033[31m"
+# define GREEN   "\033[32m"
+# define YELLOW  "\033[33m"
+# define RESET   "\033[0m"
+
 
 class Base {
 
