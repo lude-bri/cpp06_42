@@ -34,8 +34,8 @@ void	Converter::convertChar(const std::string &limits) const {
 	else
 		std::cout << "char: Non displayable" << std::endl;
 	std::cout << "int: " << static_cast<int>(c) << std::endl;
-	std::cout << "float: " << static_cast<float>(c) << std::endl;
-	std::cout << "double: " << static_cast<double>(c) << std::endl;
+	std::cout << "float: " << static_cast<float>(c) << ".0f" << std::endl;
+	std::cout << "double: " << static_cast<double>(c) << ".0" <<std::endl;
 
 	std::cout << RESET;
 }
@@ -48,11 +48,19 @@ void	Converter::convertInt(const std::string &limits) const {
 	char *end;
 	long value = std::strtol(limits.c_str(), &end, 10);
 
+	if (*end != '\0' || value < INT_MIN || value > INT_MAX) {
+		std::cout << "char: impossible" << std::endl;
+		std::cout << "int: impossible" << std::endl;
+		std::cout << "float: impossible" << std::endl;
+		std::cout << "double: impossible" << std::endl;
+		return ;
+	}
+		
 	int i = static_cast<int>(value);
 
 	if (i >= 0 && i <= 127) {
 		if (std::isprint(static_cast<unsigned char>(i)))
-			std::cout << "char: " << static_cast<char>(i) << std::endl;
+			std::cout << "char: '" << static_cast<char>(i) << "'" << std::endl;
 		else
 			std::cout << "char: Non displayable" << std::endl;
 	}
@@ -69,23 +77,45 @@ void	Converter::convertFloat(const std::string &limits) const {
 
 	std::cout << RED;
 
+	std::string str = limits;
+
+	if (limits[limits.size() -1] == 'f')
+		str = limits.substr(0, limits.size()-1);
+
 	char *end;
-	long value = std::strtol(limits.c_str(), &end, 10);
+	float value = std::strtof(str.c_str(), &end);
 
-	int i = static_cast<int>(value);
+	if (*end != '\0') {
+		std::cout << "char: impossible" << std::endl;
+		std::cout << "int: impossible" << std::endl;
+		std::cout << "float: impossible" << std::endl;
+		std::cout << "double: impossible" << std::endl;
+		return ;
+	}
 
-	if (i >= 0 && i <= 127) {
-		if (std::isprint(static_cast<unsigned char>(i)))
-			std::cout << "char: " << static_cast<char>(i) << std::endl;
+	if (value >= 0 && value <= 127) {
+		if (std::isprint(static_cast<unsigned char>(value)))
+			std::cout << "char: " << static_cast<char>(value) << std::endl;
 		else
 			std::cout << "char: Non displayable" << std::endl;
 	}
 	else
 		std::cout << "char: impossible" << std::endl;
 
-	std::cout << "int: " << static_cast<int>(i) << std::endl;
-	std::cout << "float: " << i << std::endl;
-	std::cout << "double: " << static_cast<double>(i) << std::endl;
+	if (value >= static_cast<float>(INT_MIN) && value <= static_cast<float>(INT_MAX))
+		std::cout << "int: " << static_cast<int>(value) << std::endl;
+	else
+		std::cout << "int: impossible" << std::endl;
+
+	std::cout << "float: " << value;
+	if (value == static_cast<int>(value))
+		std::cout << ".0f" << std::endl;
+	std::cout << std::endl;
+
+	std::cout << "double: " << static_cast<double>(value);
+	if (value == static_cast<int>(value))
+		std::cout << ".0" << std::endl;
+	std::cout << std::endl;
 
 	std::cout << RESET;
 }
@@ -96,20 +126,38 @@ void	Converter::convertDouble(const std::string &limits) const {
 	std::cout << BLUE;
 
 	char *end;
-	long value = std::strtol(limits.c_str(), &end, 10);
+	double value = std::strtod(limits.c_str(), &end);
 
-	int i = static_cast<int>(value);
-
-	if (i >= 0 && i <= 127) {
-		if (std::isprint(static_cast<unsigned char>(i)))
-			std::cout << "char: " << static_cast<char>(i) << std::endl;
+	if (*end != '\0') {
+		std::cout << "char: impossible" << std::endl;
+		std::cout << "int: impossible" << std::endl;
+		std::cout << "float: impossible" << std::endl;
+		std::cout << "double: impossible" << std::endl;
+		return ;
+	}
+	
+	if (value >= 0 && value <= 127) {
+		if (std::isprint(static_cast<unsigned char>(value)))
+			std::cout << "char: '" << static_cast<char>(value) << "'" << std::endl;
 		else
 			std::cout << "char: Non displayable" << std::endl;
 	}
 	else
 		std::cout << "char: impossible" << std::endl;
 
-	std::cout << "int: " << static_cast<int>(i) << std::endl;
-	std::cout << "float: " << static_cast<double>(i) << std::endl;
-	std::cout << "double: " << i << std::endl;
+	if (value >= static_cast<double>(INT_MIN) && value <= static_cast<double>(INT_MAX))
+		std::cout << "int: " << static_cast<int>(value) << std::endl;
+	else
+		std::cout << "int: impossible" << std::endl;
+
+	std::cout << "float: " << static_cast<float>(value);
+	if (value == static_cast<int>(value))
+		std::cout << ".0" << std::endl;
+	std::cout << "f" << std::endl;
+
+	std::cout << "double: " << value;
+	if (value == static_cast<int>(value))
+		std::cout << ".0" << std::endl;
+	std::cout << std::endl;
+
 }

@@ -33,6 +33,7 @@ ScalarConverter::~ScalarConverter() {
 	DEBUG_MSG("A ScalarConverter Destructor was called");
 }
 
+
 static int	verifyType(const std::string &literal) {
 
 	DEBUG_MSG("A convert method was called");
@@ -40,15 +41,15 @@ static int	verifyType(const std::string &literal) {
 	Converter check;
 
 	if (check.isChar(literal) == true )
-		return 0;
+		return CHAR;
 	else if (check.isInt(literal) == true)
-		return 1;
+		return INT;
 	else if (check.isFloat(literal) == true)
-		return 2;
+		return FLOAT;
 	else if (check.isDouble(literal) == true)
-		return 3;
+		return DOUBLE;
 	else
-		return -1;
+		return ERROR;
 
 }
 
@@ -59,19 +60,17 @@ void	ScalarConverter::convert(const std::string literal) {
 	Converter c;
 
 	switch (result) {
-		case 0:
+		case CHAR:
 			c.convertChar(literal);
 			break;
-		case 1:
+		case INT:
 			c.convertInt(literal);
 			break;
-		case 2:
+		case FLOAT:
 			c.convertFloat(literal);
-			std::cout << literal << " is a float" << std::endl;
 			break;
-		case 3:
+		case DOUBLE:
 			c.convertDouble(literal);
-			std::cout << literal << " is a double" << std::endl;
 			break;
 		default:
 			std::cout << literal << " is not valid" << std::endl;

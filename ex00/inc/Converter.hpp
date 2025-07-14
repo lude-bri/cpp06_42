@@ -19,6 +19,12 @@
 #include <cstdlib>
 #include <cctype>
 
+//MACROS
+#define CHAR 0
+#define INT 1
+#define FLOAT 2
+#define DOUBLE 3
+#define ERROR -1
 
 //DEBUG FLAGS
 #ifdef DEBUG
