@@ -6,7 +6,7 @@
 /*   By: lude-bri <lude-bri@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 21:35:26 by lude-bri          #+#    #+#             */
-/*   Updated: 2025/07/14 21:53:06 by lude-bri         ###   ########.fr       */
+/*   Updated: 2025/07/14 21:57:07 by lude-bri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,5 @@ public:
 	Data &operator=(const Data &rhs);
 	~Data();
 
+	std::string data;
 };

@@ -6,7 +6,7 @@
 /*   By: lude-bri <lude-bri@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 21:29:58 by lude-bri          #+#    #+#             */
-/*   Updated: 2025/07/14 21:46:20 by lude-bri         ###   ########.fr       */
+/*   Updated: 2025/07/14 21:55:49 by lude-bri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,4 @@ public:
 
 	//Takes an unsigned integer parameter and converts it to a pointer Data
 	Data	*deserialize(uintptr_t raw);
-	
 };

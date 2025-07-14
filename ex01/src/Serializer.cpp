@@ -6,7 +6,7 @@
 /*   By: lude-bri <lude-bri@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 21:46:43 by lude-bri          #+#    #+#             */
-/*   Updated: 2025/07/14 21:51:43 by lude-bri         ###   ########.fr       */
+/*   Updated: 2025/07/14 21:54:54 by lude-bri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,11 @@ Serializer::~Serializer() {
 }
 
 //Takes a pointer and convertsit to the unsigned integer type uintptr_t
+uintptr_t	Serializer::serialize(Data *ptr) {
+	return reinterpret_cast<uintptr_t>(ptr);
+}
+
 //Takes an unsigned integer parameter and converts it to a pointer Data
+Data	*Serializer::deserialize(uintptr_t raw) {
+	return reinterpret_cast<Data *>(raw);
+}

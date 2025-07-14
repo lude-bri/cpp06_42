@@ -6,7 +6,7 @@
 /*   By: lude-bri <lude-bri@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 21:52:02 by lude-bri          #+#    #+#             */
-/*   Updated: 2025/07/14 21:52:47 by lude-bri         ###   ########.fr       */
+/*   Updated: 2025/07/14 21:58:52 by lude-bri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,3 @@ Data &Data::operator=(const Data &rhs) {
 Data::~Data() {
 	DEBUG_MSG("A Destructor for Data was called");
 }
-
