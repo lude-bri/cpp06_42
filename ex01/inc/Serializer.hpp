@@ -46,8 +46,8 @@ private:
 
 public:
 	//Takes a pointer and converts it to the unsigned integer type uintptr_t
-	uintptr_t	serialize(Data *ptr);
+	static uintptr_t	serialize(Data *ptr);
 
 	//Takes an unsigned integer parameter and converts it to a pointer Data
-	Data	*deserialize(uintptr_t raw);
+	static Data	*deserialize(uintptr_t raw);
 };

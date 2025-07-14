@@ -6,7 +6,7 @@
 /*   By: lude-bri <lude-bri@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 21:52:02 by lude-bri          #+#    #+#             */
-/*   Updated: 2025/07/14 21:58:52 by lude-bri         ###   ########.fr       */
+/*   Updated: 2025/07/14 22:09:59 by lude-bri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,14 @@ Data &Data::operator=(const Data &rhs) {
 //Destructor
 Data::~Data() {
 	DEBUG_MSG("A Destructor for Data was called");
+}
+
+std::ostream &operator<<(std::ostream &out, const Data &data) {
+	out << CYAN << "Your Favourite List: " << std::endl;
+	out << "Favourite Film: " << data.favouriteFilm << std::endl;
+	out << "Favourite Song: " << data.favouriteSong << std::endl;
+	out << "Favourite Artist: " << data.favouriteArtist << std::endl;
+	out << "Favourite Book: " << data.favouriteBook << std::endl;
+
+	return out;
 }

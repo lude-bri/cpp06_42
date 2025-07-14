@@ -6,7 +6,7 @@
 /*   By: lude-bri <lude-bri@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 21:46:43 by lude-bri          #+#    #+#             */
-/*   Updated: 2025/07/14 21:54:54 by lude-bri         ###   ########.fr       */
+/*   Updated: 2025/07/14 22:07:15 by lude-bri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ Serializer::~Serializer() {
 	DEBUG_MSG("A Destructor for Serializer was called");
 }
 
-//Takes a pointer and convertsit to the unsigned integer type uintptr_t
+//Takes a pointer and converts it to the unsigned integer type uintptr_t
 uintptr_t	Serializer::serialize(Data *ptr) {
 	return reinterpret_cast<uintptr_t>(ptr);
 }
