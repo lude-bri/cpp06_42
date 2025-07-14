@@ -10,7 +10,7 @@ SHELL	:= bash
 #                                     NAMES                                    #
 #==============================================================================#
 
-NAME			= Serializer 
+NAME			= Serializer
 
 ###	Message Vars
 _NAME			= [$(MAG)cpp$(D)]
