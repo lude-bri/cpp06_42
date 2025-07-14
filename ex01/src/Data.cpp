@@ -1,24 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Data.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lude-bri <lude-bri@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/14 21:29:34 by lude-bri          #+#    #+#             */
-/*   Updated: 2025/07/14 21:42:40 by lude-bri         ###   ########.fr       */
+/*   Created: 2025/07/14 21:52:02 by lude-bri          #+#    #+#             */
+/*   Updated: 2025/07/14 21:52:47 by lude-bri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/Serializer.hpp"
 #include "../inc/Data.hpp"
 
-int main (void) {
-
-	//use serialize() on the address of the Data object and pass its return value
-	//to deserialize().
-	//Then ensure the return value of deserialize() compares equals to the original
-	//pointer
-
-	Data *obj;
+//Default Constructor
+Data::Data() {
+	DEBUG_MSG("A Default Constructor of Data was called");
 }
+
+//Copy Constructor
+Data::Data(const Data &rhs) {
+	DEBUG_MSG("A Copy Constructor of Data was called");
+	*this = rhs;
+}
+
+//Assignment Operator
+Data &Data::operator=(const Data &rhs) {
+	DEBUG_MSG("An Assignment Operator for Data was called");
+	return *this;
+}
+
+//Destructor
+Data::~Data() {
+	DEBUG_MSG("A Destructor for Data was called");
+}
+

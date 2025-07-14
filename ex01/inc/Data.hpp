@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Data.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lude-bri <lude-bri@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/14 21:29:34 by lude-bri          #+#    #+#             */
-/*   Updated: 2025/07/14 21:42:40 by lude-bri         ###   ########.fr       */
+/*   Created: 2025/07/14 21:35:26 by lude-bri          #+#    #+#             */
+/*   Updated: 2025/07/14 21:53:06 by lude-bri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/Serializer.hpp"
-#include "../inc/Data.hpp"
+#include "Serializer.hpp"
 
-int main (void) {
+class Data {
 
-	//use serialize() on the address of the Data object and pass its return value
-	//to deserialize().
-	//Then ensure the return value of deserialize() compares equals to the original
-	//pointer
+public:
+	Data();
+	Data(const Data &rhs);
+	Data &operator=(const Data &rhs);
+	~Data();
 
-	Data *obj;
-}
+};
