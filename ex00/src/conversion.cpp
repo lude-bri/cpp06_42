@@ -67,9 +67,49 @@ void	Converter::convertInt(const std::string &limits) const {
 void	Converter::convertFloat(const std::string &limits) const {
 	DEBUG_MSG("A convertFloat method was called");
 
+	std::cout << RED;
+
+	char *end;
+	long value = std::strtol(limits.c_str(), &end, 10);
+
+	int i = static_cast<int>(value);
+
+	if (i >= 0 && i <= 127) {
+		if (std::isprint(static_cast<unsigned char>(i)))
+			std::cout << "char: " << static_cast<char>(i) << std::endl;
+		else
+			std::cout << "char: Non displayable" << std::endl;
+	}
+	else
+		std::cout << "char: impossible" << std::endl;
+
+	std::cout << "int: " << static_cast<int>(i) << std::endl;
+	std::cout << "float: " << i << std::endl;
+	std::cout << "double: " << static_cast<double>(i) << std::endl;
+
+	std::cout << RESET;
 }
 
 void	Converter::convertDouble(const std::string &limits) const {
 	DEBUG_MSG("A convertDouble method was called");
 
+	std::cout << BLUE;
+
+	char *end;
+	long value = std::strtol(limits.c_str(), &end, 10);
+
+	int i = static_cast<int>(value);
+
+	if (i >= 0 && i <= 127) {
+		if (std::isprint(static_cast<unsigned char>(i)))
+			std::cout << "char: " << static_cast<char>(i) << std::endl;
+		else
+			std::cout << "char: Non displayable" << std::endl;
+	}
+	else
+		std::cout << "char: impossible" << std::endl;
+
+	std::cout << "int: " << static_cast<int>(i) << std::endl;
+	std::cout << "float: " << static_cast<double>(i) << std::endl;
+	std::cout << "double: " << i << std::endl;
 }
