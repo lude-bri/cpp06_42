@@ -59,6 +59,7 @@ void Base::identify(Base &p) {
 		(void)dynamic_cast<B &>(p);
 		std::cout << YELLOW <<"B" << RESET << std::endl;
 	} catch (std::exception &e) {}
+
 	try {
 		(void)dynamic_cast<C &>(p);
 		std::cout << RED << "C" << RESET << std::endl;
