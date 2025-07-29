@@ -18,6 +18,7 @@
 #include <string>
 #include <cstdlib>
 #include <cctype>
+#include <cerrno>
 
 //MACROS
 #define CHAR 0
