@@ -14,6 +14,7 @@
 
 //LIBRARIES
 #include <iostream>
+#include <stdint.h>
 
 //DEBUG FLAGS
 #ifdef DEBUG
