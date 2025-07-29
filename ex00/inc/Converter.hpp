@@ -54,7 +54,7 @@ public:
 	Converter();
 	Converter(const Converter &rhs);
 	Converter &operator=(const Converter &rhs);
-	~Converter();
+	virtual ~Converter();
 
 	typedef bool (Converter::*MemFun)(const std::string &limits) const;
     
